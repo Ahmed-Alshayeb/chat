@@ -9,7 +9,7 @@ import {
 const msgRouter = Router();
 
 msgRouter.post(
-  "/:receiverId",
+  "/",
   auth(),
   multerHost(validExtension.image).single("image"),
   MC.sendMsg

@@ -25,6 +25,7 @@ export const sendMsg = asyncHandler(async (req, res, next) => {
   const receiverSocketId = getReceiverSocketId(receiverId);
   if (receiverSocketId) {
     io.to(receiverSocketId).emit("newMsg", msg);
+    console.log("msg", msg);
   }
 
   res.status(200).json({
@@ -34,4 +35,3 @@ export const sendMsg = asyncHandler(async (req, res, next) => {
     },
   });
 });
-
