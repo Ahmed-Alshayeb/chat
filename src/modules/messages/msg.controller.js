@@ -2,6 +2,8 @@ import messageModel from "../../../DB/models/message.model.js";
 import { asyncHandler } from "../../middlewares/asyncHandler.js";
 import { getReceiverSocketId, io } from "../../services/socket.service.js";
 
+// @desc    Send message
+// @route   POST /api/message?receiverId=receiverId
 export const sendMsg = asyncHandler(async (req, res, next) => {
   const { text } = req.body;
   const { receiverId } = req.query;
